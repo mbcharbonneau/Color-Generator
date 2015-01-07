@@ -44,7 +44,9 @@ class ColorGenerator: NSObject {
     // Returns a new random color. Subsequent calls to this method will return
     // colors which are visually distinct.
 
-//    func randomColor() -> UIColor {
-//        let rgb = toRGB( 20, s: 1, v: 1 )
-//    }
+    func randomColor() -> UIColor {
+        let hue = Float( arc4random_uniform( 360 ) )
+        let rgb = toRGB( hue, s: 0.5, v: 0.95 )
+        return UIColor( red: CGFloat( rgb.r ), green: CGFloat( rgb.g ), blue: CGFloat( rgb.b ), alpha: 1.0 )
+    }
 }

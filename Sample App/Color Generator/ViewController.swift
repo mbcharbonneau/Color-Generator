@@ -11,14 +11,17 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var colorView: UIView?
+    var generator: ColorGenerator?
 
     @IBAction func nextColor() {
-        
+        colorView?.backgroundColor = generator?.randomColor()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        generator = ColorGenerator()
+        nextColor();
     }
 
     override func didReceiveMemoryWarning() {
