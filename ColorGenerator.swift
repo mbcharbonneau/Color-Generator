@@ -11,42 +11,45 @@ import UIKit
 
 class ColorGenerator: NSObject {
 
-    private func toRGB( h:Float, s:Float, v:Float ) -> ( r:Float, g:Float, b:Float ) {
+    private let goldenRatioConjugate: Float
+    private let gradientDistance: Float
+    private var randomHue: Float
 
-        if ( s == 0 ) {
-            return ( v, v, v )
-        }
+    var saturation: Float
+    var brightness: Float
 
-        let hh = h < 360.0 ? h / 60.0 : 0.0
-        let i = floor( hh )
-        let f = hh - i
+    override init() {
 
-        let p = v * ( 1.0 - s )
-        let q = v * ( 1.0 - ( s * f ) )
-        let t = v * ( 1.0 - ( s * ( 1.0 - f ) ) )
+        srand48( time( nil ) );
 
-        switch i {
-        case 0:
-            return ( v, t, p )
-        case 1:
-            return ( q, v, p )
-        case 2:
-            return ( p, v, t )
-        case 3:
-            return ( p, q, v )
-        case 4:
-            return ( t, p, v )
-        default:
-            return ( v, p, q )
-        }
+        goldenRatioConjugate = ( sqrt( 5.0 ) - 1.0 ) / 2.0
+        gradientDistance = 0.3
+        randomHue = Float( drand48() )
+        saturation = 0.5
+        brightness = 0.95
     }
 
-    // Returns a new random color. Subsequent calls to this method will return
-    // colors which are visually distinct.
+    // Returns a new random color. Each call will yeild a color that is visually
+    // distinct from the previous random color.
 
     func randomColor() -> UIColor {
-        let hue = Float( arc4random_uniform( 360 ) )
-        let rgb = toRGB( hue, s: 0.5, v: 0.95 )
-        return UIColor( red: CGFloat( rgb.r ), green: CGFloat( rgb.g ), blue: CGFloat( rgb.b ), alpha: 1.0 )
+
+        randomHue += goldenRatioConjugate
+        randomHue %= 1.0
+
+        return UIColor( hue: CGFloat( randomHue ), saturation: CGFloat( saturation ), brightness: CGFloat( brightness ), alpha: 1.0 )
+    }
+
+    // Returns a pair of random colors suitable for a gradient.
+
+    func gradientColors() -> ( start:UIColor, end:UIColor ) {
+
+        let startHue: Float = Float( drand48() ) % 1.0
+        let endHue: Float = ( startHue + gradientDistance ) % 1.0
+
+        let start = UIColor( hue: CGFloat( startHue ), saturation: CGFloat( saturation ), brightness: CGFloat( brightness ), alpha: 1.0 )
+        let end = UIColor( hue: CGFloat( endHue ), saturation: CGFloat( saturation ), brightness: CGFloat( brightness ), alpha: 1.0 )
+
+        return ( start, end )
     }
 }

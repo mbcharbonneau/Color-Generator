@@ -17,13 +17,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="33R-ee-Lw1">
-                                <rect key="frame" x="36" y="40" width="528" height="470"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="33R-ee-Lw1" userLabel="Color View">
+                                <rect key="frame" x="36" y="40" width="528" height="221"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RcB-Ec-Hs0" userLabel="Gradient View" customClass="GradientView" customModule="Color_Generator" customModuleProvider="target">
+                                <rect key="frame" x="36" y="281" width="528" height="220"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jiQ-kl-ZBQ">
-                                <rect key="frame" x="273" y="530" width="55" height="30"/>
+                                <rect key="frame" x="262" y="521" width="76" height="39"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <state key="normal" title="Color It!">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -31,15 +37,20 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="jiQ-kl-ZBQ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="28z-TG-ZWJ"/>
+                            <constraint firstItem="RcB-Ec-Hs0" firstAttribute="top" secondItem="33R-ee-Lw1" secondAttribute="bottom" constant="20" id="3nY-NO-FKQ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="jiQ-kl-ZBQ" secondAttribute="trailing" constant="529" id="IXL-wT-Z8j"/>
                             <constraint firstAttribute="trailingMargin" secondItem="33R-ee-Lw1" secondAttribute="trailing" constant="20" id="Jv5-V9-nKi"/>
+                            <constraint firstItem="RcB-Ec-Hs0" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="20" id="LXl-2m-Aaa"/>
+                            <constraint firstItem="33R-ee-Lw1" firstAttribute="height" secondItem="RcB-Ec-Hs0" secondAttribute="height" id="R5v-Bq-zbO"/>
                             <constraint firstItem="jiQ-kl-ZBQ" firstAttribute="top" secondItem="33R-ee-Lw1" secondAttribute="bottom" constant="20" id="SoG-Nf-1vC"/>
                             <constraint firstAttribute="centerX" secondItem="jiQ-kl-ZBQ" secondAttribute="centerX" id="W6t-1I-p8G"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="RcB-Ec-Hs0" secondAttribute="trailing" constant="20" id="cB5-lX-LWj"/>
                             <constraint firstItem="33R-ee-Lw1" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="20" id="eBc-MU-NkF"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="jiQ-kl-ZBQ" secondAttribute="bottom" constant="40" id="hWW-vK-7PM"/>
+                            <constraint firstItem="jiQ-kl-ZBQ" firstAttribute="top" secondItem="RcB-Ec-Hs0" secondAttribute="bottom" constant="20" id="n35-uf-aQW"/>
                             <constraint firstAttribute="trailingMargin" secondItem="33R-ee-Lw1" secondAttribute="trailing" constant="20" id="oO3-fn-rUW"/>
                             <constraint firstItem="33R-ee-Lw1" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="20" id="uIz-dQ-0yX"/>
                             <constraint firstItem="33R-ee-Lw1" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="20" id="uMo-dk-icV"/>
@@ -50,11 +61,13 @@
                                 <exclude reference="oO3-fn-rUW"/>
                                 <exclude reference="28z-TG-ZWJ"/>
                                 <exclude reference="IXL-wT-Z8j"/>
+                                <exclude reference="SoG-Nf-1vC"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="colorView" destination="33R-ee-Lw1" id="K8Z-5Z-XdS"/>
+                        <outlet property="gradientView" destination="RcB-Ec-Hs0" id="wYw-qL-BfY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

@@ -14,6 +14,7 @@
 		4857402D1A5CA98300E7CB8F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4857402B1A5CA98300E7CB8F /* LaunchScreen.xib */; };
 		485740391A5CA98300E7CB8F /* Color_GeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485740381A5CA98300E7CB8F /* Color_GeneratorTests.swift */; };
 		485740431A5CAED300E7CB8F /* ColorGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485740421A5CAED300E7CB8F /* ColorGenerator.swift */; };
+		485740451A5DE06100E7CB8F /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 485740441A5DE06100E7CB8F /* GradientView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		485740371A5CA98300E7CB8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		485740381A5CA98300E7CB8F /* Color_GeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color_GeneratorTests.swift; sourceTree = "<group>"; };
 		485740421A5CAED300E7CB8F /* ColorGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorGenerator.swift; path = ../../ColorGenerator.swift; sourceTree = "<group>"; };
+		485740441A5DE06100E7CB8F /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 				485740421A5CAED300E7CB8F /* ColorGenerator.swift */,
 				485740221A5CA98300E7CB8F /* AppDelegate.swift */,
 				485740241A5CA98300E7CB8F /* ViewController.swift */,
+				485740441A5DE06100E7CB8F /* GradientView.swift */,
 				485740261A5CA98300E7CB8F /* Main.storyboard */,
 				485740291A5CA98300E7CB8F /* Images.xcassets */,
 				4857402B1A5CA98300E7CB8F /* LaunchScreen.xib */,
@@ -217,6 +220,7 @@
 			files = (
 				485740431A5CAED300E7CB8F /* ColorGenerator.swift in Sources */,
 				485740251A5CA98300E7CB8F /* ViewController.swift in Sources */,
+				485740451A5DE06100E7CB8F /* GradientView.swift in Sources */,
 				485740231A5CA98300E7CB8F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

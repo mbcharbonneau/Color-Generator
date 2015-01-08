@@ -11,10 +11,17 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var colorView: UIView?
+    @IBOutlet weak var gradientView: GradientView?
+
     var generator: ColorGenerator?
 
     @IBAction func nextColor() {
         colorView?.backgroundColor = generator?.randomColor()
+
+        let colors = generator?.gradientColors()
+
+        gradientView?.start = colors?.start
+        gradientView?.end = colors?.end
     }
 
     override func viewDidLoad() {
@@ -23,12 +30,4 @@ class ViewController: UIViewController {
         generator = ColorGenerator()
         nextColor();
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
-
