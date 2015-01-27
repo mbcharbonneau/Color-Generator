@@ -40,7 +40,7 @@ class ColorGenerator: NSObject {
         return UIColor( hue: CGFloat( randomHue ), saturation: CGFloat( saturation ), brightness: CGFloat( brightness ), alpha: 1.0 )
     }
 
-    // Returns a pair of random colors suitable for a gradient.
+    // Returns a pair of random colors suitable for a nice gradient.
 
     func gradientColors() -> ( start:UIColor, end:UIColor ) {
 
@@ -52,4 +52,27 @@ class ColorGenerator: NSObject {
 
         return ( start, end )
     }
+
+    // Create a random variant of the given baseColor, using distance to
+    // determine how much to change the RGB values.
+
+    func varyColor( baseColor:UIColor, distance:CGFloat ) -> UIColor {
+
+        var red: CGFloat = 0.0
+        var green: CGFloat = 0.0
+        var blue: CGFloat = 0.0
+
+        baseColor.getRed( &red, green: &green, blue: &blue, alpha: nil )
+
+        var randomRed: CGFloat = CGFloat( drand48() ) % distance
+        var randomGreen: CGFloat = CGFloat( drand48() ) % distance
+        var randomBlue: CGFloat = CGFloat( drand48() ) % distance
+
+        red += ( red + randomRed > 1.0 ) ? randomRed * -1.0 : randomRed
+        green += ( red + randomGreen > 1.0 ) ? randomGreen * -1.0 : randomGreen
+        blue += ( red + randomBlue > 1.0 ) ? randomBlue * -1.0 : randomBlue
+
+        return UIColor(red: red, green: green, blue: blue, alpha: 1.0)
+    }
+
 }
