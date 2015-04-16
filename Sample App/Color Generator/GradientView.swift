@@ -24,7 +24,7 @@ class GradientView: UIView {
             if let endColor = end {
 
                 let array = [startColor.CGColor, endColor.CGColor]
-                var gradientLayer = layer as CAGradientLayer
+                var gradientLayer = layer as! CAGradientLayer
 
                 gradientLayer.colors = array
                 gradientLayer.locations = [0.0, 1.0];
