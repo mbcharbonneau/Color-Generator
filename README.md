@@ -2,6 +2,8 @@
 
 ColorGenerator.swift is a collection of methods to create random colors for UI controls in an iOS app. Drop it into your Xcode project to use it. A sample project is included.
 
+![iPhone Simulator](http://i.imgur.com/UnSqLVE.png)
+
 ### randomColor()
 
 Each call to randomColor() will return a new UIColor instance that's visually distinct from the previous color. This makes it ideal for coloring buttons or other elements where the total number of colors needed is not known beforehand.
