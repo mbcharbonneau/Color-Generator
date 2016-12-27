@@ -3,7 +3,7 @@
 //  Color Generator
 //
 //  Created by mbcharbonneau on 1/6/15.
-//  Copyright (c) 2015 Downtown Software House. All rights reserved.
+//  Copyright (c) 2015 Once Living LLC. All rights reserved.
 //
 
 import UIKit
@@ -17,8 +17,8 @@ class ViewController: UIViewController {
     var generator: ColorGenerator?
 
     @IBAction func nextColor() {
-        colorView?.backgroundColor = generator?.randomColor()
-        colorVariantView?.backgroundColor = generator?.varyColor( UIColor.redColor(), distance:0.3 )
+        colorView?.backgroundColor = generator?.random()
+        colorVariantView?.backgroundColor = generator?.variation(of: UIColor.red, distance:0.3)
         
         let colors = generator?.gradientColors()
 

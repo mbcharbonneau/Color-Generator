@@ -3,7 +3,7 @@
 //  Color GeneratorTests
 //
 //  Created by mbcharbonneau on 1/6/15.
-//  Copyright (c) 2015 Downtown Software House. All rights reserved.
+//  Copyright (c) 2015 Once Living LLC. All rights reserved.
 //
 
 import UIKit
@@ -28,7 +28,7 @@ class Color_GeneratorTests: XCTestCase {
     
     func testPerformanceExample() {
         // This is an example of a performance test case.
-        self.measureBlock() {
+        self.measure() {
             // Put the code you want to measure the time of here.
         }
     }
